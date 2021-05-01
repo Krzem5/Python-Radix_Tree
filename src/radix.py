@@ -81,10 +81,9 @@ def delete(t,v):
 								continue
 							if (len(l[j]["l"])==1 and l[j]["id"]==-1):
 								e=l[j]["l"][0]
-								for k in l[j-1]["l"]:
+								for m,k in enumerate(l[j-1]["l"]):
 									if (k["v"]==l[j]["v"]):
-										l[j-1]["l"].remove(k)
-										l[j-1]["l"].append({"v":l[j]["v"]+e["v"],"l":e["l"],"id":e["id"]})
+										l[j-1]["l"][m]={"v":l[j]["v"]+e["v"],"l":e["l"],"id":e["id"]}
 								break
 							l[j]["id"]=-1
 							break
